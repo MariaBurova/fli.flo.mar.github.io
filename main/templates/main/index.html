@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Технология создания музыкальных композиций с помощью программного обеспечения </h1>
+        <p>Электронный образовательный ресурс содержит материал занятий по элективному курсу</p>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <button class="btn btn-warning">Перейти к Разделу 1</button>
+        <button class="btn btn-warning">Перейти к Разделу 2</button>
+        <button class="btn btn-warning">Перейти к Разделу 3</button>
+        <button class="btn btn-warning">Итоговый контроль</button>
+        {% if tasks %}
+            {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+               <h3>{{ el.title }}</h3>
+               <p>{{ el.task }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Материал занятий дополняется...</p>
+        {% endif %}
+    </div>
+{% endblock %}
